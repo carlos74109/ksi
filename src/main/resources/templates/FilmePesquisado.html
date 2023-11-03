@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://thymeleaf.org">
+
+<th:block th:include="navegador"></th:block>
+
+<h1 class="text-center">Filmes pesquisado</h1>
+
+    <form method="post" action="/favoritar">
+
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12 d-flex justify-content-center">
+
+                            <div class="card centered-div" style="max-width: 640px;">
+                                <div class="row g-0">
+                                    <div class="col-md-4">
+                                        <img th:src="${filme.Poster}" class="img-fluid rounded-start" alt="...">
+                                    </div>
+                                    <div class="col-md-8">
+                                        <div class="card-body">
+                                            <h5 class="card-title"><input readonly style="border: none; width:600px" type="text" name="Title" th:field="${filme.Title}"></h5>
+                                            <p class="card-text">Diretor: <input readonly style="border: none; width: 200px" type="text" name="Director" th:field="${filme.Director}"></p>
+                                            <p class="card-text">Lançamento: <input readonly style="border: none; width: 200px" name="Released" th:field="${filme.Released}"></p>
+                                            <input name="Poster" th:field="${filme.Poster}"  style="display: none;" placeholder="Poster">
+                                            <button class="btn btn-primary" style="margin-top: 60px" type="submit">Favoritar</button>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                    </div>
+                </div>
+        </div>
+
+    </form>
+</body>
+</html>

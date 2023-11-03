@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html xmlns:th="http://thymeleaf.org">
+
+<th:block th:include="navegador"></th:block>
+
+       <header>
+           <div class="alert alert-success" role="alert" th:if="${not #strings.isEmpty(mensagemFavorito)}">
+               <th:block><span th:text="${mensagemFavorito}"></span></th:block>
+           </div>
+
+       </header>
+
+       <h1 class="text-center">Ksi Consultoria</h1>
+
+       <form method="get" action="/tituloFilme">
+           <div class="container">
+               <div class="input-group mb-3">
+                   <input class="form-control" type="text" name="Title" placeholder="Digite o titulo">
+                   <button class="btn btn-outline-secondary" type="submit">Pesquiar</button>
+               </div>
+           </div>
+
+       </form>
+
+</body>
+</html>
