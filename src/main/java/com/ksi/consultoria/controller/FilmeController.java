@@ -38,7 +38,6 @@ public class FilmeController {
 
     @GetMapping("/tituloFilme")
     public Object exibirDadosFilme (Filme tituloFilme, RedirectAttributes redirectAtribute) {
-
         try {
             ModelAndView mv = new ModelAndView("FilmePesquisado");
             mv.addObject("filme", consultarFilme(tituloFilme.getTitle()));
