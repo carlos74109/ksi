@@ -37,10 +37,17 @@ public class FilmeController {
     }
 
     @GetMapping("/tituloFilme")
-    public ModelAndView exibirDadosFilme (Filme tituloFilme) throws IOException, InterruptedException {
-        ModelAndView mv = new ModelAndView("FilmePesquisado");
-        mv.addObject("filme", consultarFilme(tituloFilme.getTitle()));
-        return mv;
+    public Object exibirDadosFilme (Filme tituloFilme, RedirectAttributes redirectAtribute) {
+
+        try {
+            ModelAndView mv = new ModelAndView("FilmePesquisado");
+            mv.addObject("filme", consultarFilme(tituloFilme.getTitle()));
+            return mv;
+
+        }catch (Exception e){
+            redirectAtribute.addFlashAttribute("mensagemFilmeNaoEncontrado", "Filme não encontrado");
+            return "redirect:/";
+        }
     }
 
     @PostMapping("/favoritar")

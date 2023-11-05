@@ -3,24 +3,28 @@
 
 <th:block th:include="navegador"></th:block>
 
-       <header>
-           <div class="alert alert-success" role="alert" th:if="${not #strings.isEmpty(mensagemFavorito)}">
-               <th:block><span th:text="${mensagemFavorito}"></span></th:block>
-           </div>
+<header>
+    <div class="alert alert-success" role="alert" th:if="${not #strings.isEmpty(mensagemFavorito)}">
+        <th:block><span th:text="${mensagemFavorito}"></span></th:block>
+    </div>
 
-       </header>
+    <div class="alert alert-danger" role="alert" th:if="${not #strings.isEmpty(mensagemFilmeNaoEncontrado)}">
+        <th:block><span th:text="${mensagemFilmeNaoEncontrado}"></span></th:block>
+    </div>
 
-       <h1 class="text-center">Ksi Consultoria</h1>
+</header>
 
-       <form method="get" action="/tituloFilme">
-           <div class="container">
-               <div class="input-group mb-3">
-                   <input class="form-control" type="text" name="Title" placeholder="Digite o titulo">
-                   <button class="btn btn-outline-secondary" type="submit">Pesquiar</button>
-               </div>
-           </div>
+<h1 class="text-center">Ksi Consultoria</h1>
 
-       </form>
+<form method="get" action="/tituloFilme">
+    <div class="container">
+        <div class="input-group mb-3">
+            <input class="form-control" type="text" name="Title" placeholder="Digite o titulo">
+            <button class="btn btn-outline-secondary" type="submit">Pesquiar</button>
+        </div>
+    </div>
+
+</form>
 
 </body>
 </html>
